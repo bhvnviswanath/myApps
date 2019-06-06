@@ -14,6 +14,8 @@ public class App
     public static void main( String[] args )
     {
     	String json = "{\"id\": 1, \"name\": \"The Beatles\"}";
+    	
+    	String json = "{\"id\": 1, \"name\": \"The Beatles\"}";
 
         ObjectMapper mapper = new ObjectMapper();
         try {
