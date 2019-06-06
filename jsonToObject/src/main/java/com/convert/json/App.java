@@ -15,8 +15,6 @@ public class App
     {
     	String json = "{\"id\": 1, \"name\": \"The Beatles\"}";
     	
-    	String json = "{\"id\": 1, \"name\": \"The Beatles\"}";
-
         ObjectMapper mapper = new ObjectMapper();
         try {
             Object artist = mapper.readValue(json, Object.class);
