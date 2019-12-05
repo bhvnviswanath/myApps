@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.learning.rest.dao.Person;
+import com.learning.rest.repository.EmployeeRepository;
 import com.learning.rest.repository.PersonsRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class CRUDController {
 
 	@Autowired
-	PersonsRepository personsRepository;
+	EmployeeRepository employeeRepository;
 
 	@GetMapping("/add")
 	public String getDetails() {
@@ -28,17 +29,16 @@ public class CRUDController {
 	@GetMapping("/getCount")
 	public void getCount() {
 
-		System.out.println("Total Count is :: " + personsRepository.count());
+		System.out.println("Total Count is :: " + employeeRepository.count());
 	}
 
-	@GetMapping("/getPersonDetails/{id}")
-	public List<Person> getDetailsById(@PathVariable("id") long id) {
-		Optional<Person> personDetails = personsRepository.findById(id);
-		personDetails.
-		
-		personsRepository.
-		return personDetails;
-	}
+	/*
+	 * @GetMapping("/getPersonDetails/{id}") public List<Person>
+	 * getDetailsById(@PathVariable("id") long id) { Optional<Person> personDetails
+	 * = personsRepository.findById(id); personDetails.
+	 * 
+	 * personsRepository. return personDetails; }
+	 */
 
 	public void getAllDetails() {
 
