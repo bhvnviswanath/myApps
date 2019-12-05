@@ -1,40 +1,47 @@
 package com.learning.rest.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.learning.rest.entity.Employee;
+import com.learning.rest.repository.EmployeeRepository;
+
 public class EmployeeServiceImpl implements EmployeeService {
+	
+	@Autowired
+	EmployeeRepository employeeRepository;
 
 	@Override
 	public void addEmployee() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void deleteEmployee() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void getEmployeeDetails() {
-		// TODO Auto-generated method stub
+	public List<Employee> getEmployeeDetails() {
+		
+		employeeRepository.findEmployeeByID();
+		return null;
 
 	}
 
 	@Override
 	public void updateEmployee() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void getAllEmployees() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void getEmployeeByName() {
-		// TODO Auto-generated method stub
 
 	}
 
