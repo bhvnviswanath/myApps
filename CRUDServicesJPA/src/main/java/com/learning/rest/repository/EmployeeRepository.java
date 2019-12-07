@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.learning.rest.entity.Employee;
 
 @Repository
-public interface EmployeeRepository extends CrudRepository<Employee, Long>{
+public interface EmployeeRepository extends CrudRepository<Employee, Integer>{
 
 	//List<Employee> findByEname(long id);
 

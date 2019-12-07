@@ -32,7 +32,7 @@ public class CRUDController {
 
 	@GetMapping("/getEmployeeDetails/{id}")
 	
-	public Optional<Employee> getDetailsById(@PathVariable("id") long id) {
+	public Optional<Employee> getDetailsById(@PathVariable("id") Integer id) {
 		//Optional<Employee> EmployeeDetails = employeeService.getEmployeeDetails(id);
 		return employeeService.getEmployeeDetails(id);
 
