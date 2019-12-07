@@ -1,6 +1,7 @@
 package com.learning.rest.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,16 +28,15 @@ public class CRUDController {
 	@GetMapping("/getCount")
 	public void getCount() {
 
-	//	System.out.println("Total Count is :: " + employeeRepository.count());
 	}
 
-	@GetMapping("/getEmployeeDetails/{id}") public List<Employee>
-	  getDetailsById(@PathVariable("id") long id) 
-	{ 
-		List<Employee> EmployeeDetails = employeeService.getEmployeeDetails(); 
-		return null;
-		
-		}
+	@GetMapping("/getEmployeeDetails/{id}")
+	
+	public Optional<Employee> getDetailsById(@PathVariable("id") long id) {
+		//Optional<Employee> EmployeeDetails = employeeService.getEmployeeDetails(id);
+		return employeeService.getEmployeeDetails(id);
+
+	}
 
 	public void getAllDetails() {
 

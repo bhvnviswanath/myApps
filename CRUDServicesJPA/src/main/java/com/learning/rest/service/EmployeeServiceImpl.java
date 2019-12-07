@@ -1,12 +1,14 @@
 package com.learning.rest.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.learning.rest.entity.Employee;
 import com.learning.rest.repository.EmployeeRepository;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Autowired
@@ -23,14 +25,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<Employee> getEmployeeDetails() {
-		
-		//employeeRepository.findEmployeeByID();
-		return null;
-
-	}
-
-	@Override
 	public void updateEmployee() {
 
 	}
@@ -43,6 +37,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void getEmployeeByName() {
 
+	}
+
+	@Override
+	public Optional<Employee> getEmployeeDetails(long id) {
+		return employeeRepository.findById(id);
 	}
 
 }

@@ -16,8 +16,8 @@ public class Employee {
 	@Column(name="EMPNO")
 	private int empNo;
 	
-	@Column(name="ID")
-	private String id;
+	@Column(name="ENAME")
+	private String eName;
 	
 	@Column(name="JOB")
 	private String job;
