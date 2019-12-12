@@ -1,7 +1,5 @@
 package com.learning.rest.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,7 +29,8 @@ public class CRUDController {
 
 	@GetMapping("/getEmployeeDetails/{id}")
 	
-	public Optional<Employee> getDetailsById(@PathVariable("id") Integer id) {
+	public Iterable<Employee> getDetailsById(@PathVariable("id") Integer id) {
+		System.out.println("In COntroller");
 		//Optional<Employee> EmployeeDetails = employeeService.getEmployeeDetails(id);
 		return employeeService.getEmployeeDetails(id);
 
