@@ -1,5 +1,7 @@
 package com.learning.rest.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,9 +40,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Iterable<Employee> getEmployeeDetails(Integer id) {
-		System.out.println("In Service Class");
-		return employeeRepository.findAll();
+	public Optional<Employee> getEmployeeDetails(Integer id) {
+		return employeeRepository.findById(7499);
 		
 		//return employeeRepository.findById(id);
 	}

@@ -1,15 +1,19 @@
 package com.learning.rest.entity;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@Entity(name ="emp")
+@Getter
+@Setter
+@Entity
+@Table(name ="emp")
 public class Employee {
 
 	@Id

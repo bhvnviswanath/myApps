@@ -1,6 +1,10 @@
 package com.learning.rest.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,13 +31,11 @@ public class CRUDController {
 
 	}
 
-	@GetMapping("/getEmployeeDetails/{id}")
-	
-	public Iterable<Employee> getDetailsById(@PathVariable("id") Integer id) {
-		System.out.println("In COntroller");
-		//Optional<Employee> EmployeeDetails = employeeService.getEmployeeDetails(id);
-		return employeeService.getEmployeeDetails(id);
-
+	@GetMapping("/getEmployeeDetails/{id}")	
+	public ResponseEntity<Optional<Employee>> getDetailsById(@PathVariable("id") Integer id) {
+			Optional<Employee> employeeDetailsObj = employeeService.getEmployeeDetails(id);
+			
+		return new ResponseEntity<Optional<Employee>>(employeeDetailsObj, HttpStatus.OK);
 	}
 
 	public void getAllDetails() {
