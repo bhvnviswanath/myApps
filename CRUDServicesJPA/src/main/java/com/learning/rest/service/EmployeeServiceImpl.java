@@ -40,8 +40,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Optional<Employee> getEmployeeDetails(Integer id) {
-		return employeeRepository.findById(7499);
+	public Employee getEmployeeDetails(Integer id) throws Exception{
+		return employeeRepository.findById(id).orElseThrow(
+			    () -> new Exception("User not found with userId " + id));
 		
 		//return employeeRepository.findById(id);
 	}

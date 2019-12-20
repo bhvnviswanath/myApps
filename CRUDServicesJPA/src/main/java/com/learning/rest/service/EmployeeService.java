@@ -9,7 +9,7 @@ public interface EmployeeService {
 	
 	public void addEmployee();
 	public void deleteEmployee();
-	public Optional<Employee> getEmployeeDetails(Integer id);
+	public Employee getEmployeeDetails(Integer id) throws Exception;
 	public void updateEmployee();
 	public void getAllEmployees();
 	public void getEmployeeByName();

@@ -1,5 +1,6 @@
 package com.learning.rest.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,14 @@ public class CRUDController {
 	}
 
 	@GetMapping("/getEmployeeDetails/{id}")	
-	public ResponseEntity<Optional<Employee>> getDetailsById(@PathVariable("id") Integer id) {
-			Optional<Employee> employeeDetailsObj = employeeService.getEmployeeDetails(id);
+	public ResponseEntity<Employee> getDetailsById(@PathVariable("id") Integer id) throws Exception {
+			Employee employeeDetailsObj = employeeService.getEmployeeDetails(id);
 			
-		return new ResponseEntity<Optional<Employee>>(employeeDetailsObj, HttpStatus.OK);
+			Employee elist = employeeService.getEmployeeDetails(id);
+			
+			//elist.ifPresent(value->{System.out.println(elist.get());});
+			
+		return new ResponseEntity<Employee>(employeeDetailsObj, HttpStatus.OK);
 	}
 
 	public void getAllDetails() {
