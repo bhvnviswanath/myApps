@@ -29,4 +29,11 @@ public class RestMethodsGetPost {
 			@RequestParam("orderBy") List<String> orderBy) {
 		return "FROM " + from + " TO " + to + " OrderBy " + orderBy.size();
 	}
+	
+	@PostMapping("/users")
+	public String getdetails() {
+		return "This is get Method";
+	}
+	
+	
 }
