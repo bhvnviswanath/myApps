@@ -2,6 +2,8 @@ package com.learning.rest.controller;
 
 import java.net.URI;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,7 @@ public class UserController {
 	}
 
 	@PostMapping("/adduser")
-	public ResponseEntity<Object> addUser(@RequestBody User userObj) {
+	public ResponseEntity<Object> addUser(@Valid @RequestBody User userObj) {
 		User createdUser = userService.addUser(userObj);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(createdUser.getId()).toUri();

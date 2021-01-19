@@ -1,8 +1,12 @@
 package com.learning.rest.bean;
 
+import javax.validation.constraints.Size;
+
 public class User {
 
 	private int id;
+	
+	@Size(min=3, message="Name should have minimum 3 characters")
 	private String userName;
 	private String userOccupation;
 
