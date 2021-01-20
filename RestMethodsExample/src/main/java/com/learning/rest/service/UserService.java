@@ -11,7 +11,7 @@ import com.learning.rest.bean.User;
 @Service
 public class UserService {
 
-	private static List<User> users = new ArrayList<User>() {
+  private static List<User> users = new ArrayList<User>() {
 		{
 			add(new User(1, "Apple", "Developer"));
 			add(new User(2, "Google", "Developer"));
@@ -49,5 +49,9 @@ public class UserService {
 		}
 		return null;
 	}
+
+  public List<User> retrieveAllUsers() {
+    return users;
+  }
 
 }
