@@ -19,7 +19,7 @@ import com.learning.rest.service.UserService;
 
 @RestController
 public class UserController {
-  
+
   @Autowired
   private UserService userService;
 
